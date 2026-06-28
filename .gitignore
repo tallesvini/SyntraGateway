@@ -1,0 +1,104 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+!packages/build/
+.nuget/packages/
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Publish
+publish/
+wwwroot/dist/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Entity Framework
+*.mdf
+*.ldf
+
+# SQL Server
+*.bak
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# DotCover
+*.dotCover
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Azure
+PublishProfiles/
+*.publishsettings
+
+# User Secrets
+secrets.json
+
+# Environment Variables
+.env
+.env.*
+
+# Certificates
+*.pfx
+*.p12
+*.key
+*.pem
+*.crt
+
+# Local settings
+appsettings.Development.json
+appsettings.Local.json
+
+# Docker
+docker-compose.override.yml
+
+# Generated files
+Generated/
+
+# Visual Studio
+*.vs/
+
