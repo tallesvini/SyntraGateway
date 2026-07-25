@@ -7,15 +7,14 @@ Cada ADR documenta uma decisão arquitetural importante tomada durante o desenvo
 ## ADRs
 
 | Nº | Título | Status |
-|----|--------|--------|
-
+|:---|:-------|:------:|
 | ADR-0001 | Adoção da Arquitetura Modular Monolith | ✅ Aceito |
 | ADR-0002 | Adoção do Domain-Driven Design (DDD) | ✅ Aceito |
 | ADR-0003 | Adoção do CQRS | ✅ Aceito |
 | ADR-0004 | Adoção da Vertical Slice Architecture | ✅ Aceito |
 | ADR-0005 | Persistência com Entity Framework Core | ✅ Aceito |
 | ADR-0006 | Estratégia de Multi-Tenancy | ✅ Aceito |
-| ADR-0007 | Adoção de API Gateway | ✅ Aceito |
+| ADR-0007 | Adoção de API Gateway | ✅ Aceito |# Syntra API Platform
 | ADR-0008 | Autenticação com JWT | ✅ Aceito |
 
 ## Objetivo
