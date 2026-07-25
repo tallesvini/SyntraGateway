@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Syntra.BuildingBlocks\Syntra.BuildingBlocks.Application\Syntra.BuildingBlocks.Application\Syntra.BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="..\Syntra.Modules.Management.Domain\Syntra.Modules.Management.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
