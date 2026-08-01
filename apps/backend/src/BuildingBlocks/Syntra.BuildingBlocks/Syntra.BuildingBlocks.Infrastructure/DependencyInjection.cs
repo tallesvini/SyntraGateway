@@ -1,8 +1,9 @@
-﻿using FluentValidation;
-using System.Reflection;
+﻿using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Syntra.BuildingBlocks.Infrastructure.Security;
 using Syntra.BuildingBlocks.Application.Abstractions.Security;
+using Syntra.BuildingBlocks.Infrastructure.Time;
+using Syntra.SharedKernel.Abstractions;
 
 namespace Syntra.BuildingBlocks.Infrastructure
 {
@@ -13,6 +14,7 @@ namespace Syntra.BuildingBlocks.Infrastructure
         {
             services.AddScoped<ISecurityCredentialGenerator, SecurityCredentialGenerator>();
             services.AddScoped<ISecretHasher, SecretHasher>();
+            services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
             return services;
         }

@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SharedKernel\Syntra.SharedKernel\Syntra.SharedKernel.csproj" />
     <ProjectReference Include="..\Syntra.BuildingBlocks.Application\Syntra.BuildingBlocks.Application\Syntra.BuildingBlocks.Application.csproj" />
   </ItemGroup>
 

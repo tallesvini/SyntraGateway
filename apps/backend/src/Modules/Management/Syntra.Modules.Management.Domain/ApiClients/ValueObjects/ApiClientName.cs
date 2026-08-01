@@ -14,7 +14,7 @@ namespace Syntra.Modules.Management.Domain.ApiClients.ValueObjects
 
         public static Result<ApiClientName> Create(string value)
         {
-            if (string.IsNullOrWhiteSpace(value))  return ApiClientErrors.NameRequired;
+            if (string.IsNullOrWhiteSpace(value)) return ApiClientErrors.NameRequired;
 
             value = value.Trim();
 

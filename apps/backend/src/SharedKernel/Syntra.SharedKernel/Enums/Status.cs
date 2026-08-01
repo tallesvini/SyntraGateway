@@ -1,6 +1,6 @@
 ﻿namespace Syntra.SharedKernel.Enums
 {
-    public enum Status : int
+    public enum Status
     {
         Active,
         Inactive

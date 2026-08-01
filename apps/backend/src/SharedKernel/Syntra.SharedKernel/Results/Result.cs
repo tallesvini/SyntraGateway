@@ -2,14 +2,19 @@
 {
     public class Result
     {
-        public bool IsSuccess { get; set; }
-        public ResultError? Error { get; set; }
+        public bool IsSuccess { get; }
+        public ResultError Error { get; }
 
-        protected Result(bool isSuccess, ResultError? error)
+        protected Result(bool isSuccess, ResultError error)
         {
             IsSuccess = isSuccess;
             Error = error;
         }
+
+        public static Result Success() => new(true, ResultError.None);
+        public static Result Failure(ResultError error) => new(false, error);
+
+        public static implicit operator Result(ResultError error) => Failure(error);
 
         public static Result<TValue> Success<TValue>(TValue value) => new(value, true, ResultError.None);
         public static Result<TValue> Failure<TValue>(ResultError error) => new(default, false, error);
