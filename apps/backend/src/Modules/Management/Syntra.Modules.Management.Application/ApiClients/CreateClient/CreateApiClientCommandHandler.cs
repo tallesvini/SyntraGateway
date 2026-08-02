@@ -25,7 +25,7 @@ namespace Syntra.Modules.Management.Application.ApiClients.CreateClient
 
             return await ApiClient.Create(request.Name, request.Description, credential.ClientId, credential.SecretHash)
                 .Tap(client => _repository.AddAsync(client, cancellationToken))
-                    .Tap(client => _unitOfWork.SaveChangesAsync(cancellationToken))
+                    .Tap(_ => _unitOfWork.SaveChangesAsync(cancellationToken))
                         .Map(client => new CreateApiClientResponse(client.Credential.ClientId, credential.ClientSecret));
         }
     }

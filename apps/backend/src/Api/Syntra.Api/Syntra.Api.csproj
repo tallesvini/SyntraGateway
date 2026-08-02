@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\BuildingBlocks\Syntra.BuildingBlocks\Syntra.BuildingBlocks.Infrastructure\Syntra.BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Authentication\Syntra.Modules.Authentication.Infrastructure\Syntra.Modules.Authentication.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Modules\Management\Syntra.Modules.Management.Infrastructure\Syntra.Modules.Management.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Modules\Management\Syntra.Modules.Management.Presentation\Syntra.Modules.Management.Presentation.csproj" />
   </ItemGroup>

@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="ApiSessions\GetByClientId\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Syntra.BuildingBlocks\Syntra.BuildingBlocks.Application\Syntra.BuildingBlocks.Application\Syntra.BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="..\..\..\SharedKernel\Syntra.SharedKernel\Syntra.SharedKernel.csproj" />
+    <ProjectReference Include="..\Syntra.Modules.Authentication.Domain\Syntra.Modules.Authentication.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

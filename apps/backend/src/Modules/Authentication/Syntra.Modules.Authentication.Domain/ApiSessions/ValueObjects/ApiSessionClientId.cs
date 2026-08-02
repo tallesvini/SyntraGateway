@@ -2,7 +2,7 @@
 using Syntra.SharedKernel.Guards;
 using Syntra.SharedKernel.Results;
 
-namespace Syntra.Modules.Authentication.Domain.ApiSession.ValueObjects
+namespace Syntra.Modules.Authentication.Domain.ApiSessions.ValueObjects
 {
     public sealed class ApiSessionClientId : ValueObject
     {

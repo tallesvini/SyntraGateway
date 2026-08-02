@@ -1,7 +1,7 @@
 ﻿using Syntra.SharedKernel.Domain;
 using Syntra.SharedKernel.Results;
 
-namespace Syntra.Modules.Authentication.Domain.ApiSession.ValueObjects
+namespace Syntra.Modules.Authentication.Domain.ApiSessions.ValueObjects
 {
     public sealed class ApiSessionOrigin : ValueObject
     {

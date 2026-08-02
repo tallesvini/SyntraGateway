@@ -1,9 +1,9 @@
 ﻿using Syntra.SharedKernel.Domain;
 using Syntra.SharedKernel.Results;
 using Syntra.Modules.Authentication.Domain.Common;
-using Syntra.Modules.Authentication.Domain.ApiSession.ValueObjects;
+using Syntra.Modules.Authentication.Domain.ApiSessions.ValueObjects;
 
-namespace Syntra.Modules.Authentication.Domain.ApiSession
+namespace Syntra.Modules.Authentication.Domain.ApiSessions
 {
     public sealed class ApiSession : StatusEntity
     {
@@ -14,6 +14,7 @@ namespace Syntra.Modules.Authentication.Domain.ApiSession
         public DateTimeOffset ExpiresAt { get; private set; }
         public DateTimeOffset? LastAccessAt { get; private set; }
         public DateTimeOffset? RevokedAt { get; private set; }
+        public Guid? RevokedBy { get; private set; }
 
         private ApiSession() { }
 
@@ -27,23 +28,32 @@ namespace Syntra.Modules.Authentication.Domain.ApiSession
             CreatedAt = createdAt;
         }
 
-        public static Result<ApiSession> Create(ApiSessionClientId clientId, ApiSessionJti jti, DateTimeOffset createdAt, DateTimeOffset expiresAt, ApiSessionOrigin? origin = null)
+        public static Result<ApiSession> Create(Guid clientId, Guid jti, DateTimeOffset createdAt, DateTimeOffset expiresAt, ApiSessionOrigin? origin = null)
         {
             if (expiresAt <= createdAt)
                 return ApiSessionError.InvalidExpirationDate;
 
-            return new ApiSession(clientId, jti, createdAt, expiresAt, origin);
+            var apiSessionClientResult = ApiSessionClientId.Create(clientId); 
+            if (!apiSessionClientResult.IsSuccess) 
+                return apiSessionClientResult.Error;
+
+            var jtiResult = ApiSessionJti.Create(jti);
+            if (!jtiResult.IsSuccess) 
+                return ApiSessionError.InvalidJti;
+
+            return new ApiSession(apiSessionClientResult.Value, jtiResult.Value, createdAt, expiresAt, origin);
         }
 
         public bool IsExpired(DateTimeOffset now) =>
             ExpiresAt <= now;
 
-        public void Revoke(DateTimeOffset revokedAt)
+        public void Revoke(DateTimeOffset revokedAt, Guid revokedBy)
         {
             if (TokenStatus == TokenStatus.Revoked) return;
 
             TokenStatus = TokenStatus.Revoked;
             RevokedAt = revokedAt;
+            RevokedBy = revokedBy;
         }
 
         public void RegisterAccess(DateTimeOffset accessedAt)

@@ -1,6 +1,6 @@
 ﻿using Syntra.SharedKernel.Results;
 
-namespace Syntra.Modules.Authentication.Domain.ApiSession
+namespace Syntra.Modules.Authentication.Domain.ApiSessions
 {
     public static class ApiSessionError
     {
